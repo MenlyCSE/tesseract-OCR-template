@@ -3,11 +3,11 @@ async function performOCR() {
     const resultElement = document.getElementById('result');
 
     if (imageInput.files.length === 0) {
-        resultElement.textContent = 'Please select an image.';
+        resultElement.textContent = 'Please select an image';
         return;
     }
 
     const imageFile = imageInput.files[0];
     const { data: { text } } = await Tesseract.recognize(imageFile);
-    resultElement.textContent = 'Extracted Text: ' + text;
+    resultElement.textContent = text;
 }
